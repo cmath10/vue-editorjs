@@ -12,5 +12,5 @@ then
     docker-compose run --rm --service-ports node bash
 else
     echo "Connecting to container ${RUNNING_CONTAINER_ID}..."
-    docker exec -it --user hostuser ${RUNNING_CONTAINER_ID} bash
+    docker exec -it --user node ${RUNNING_CONTAINER_ID} bash
 fi

@@ -1,5 +1,5 @@
 <template>
-    <div/>
+    <div />
 </template>
 
 <script>
@@ -85,12 +85,16 @@
       },
 
       loadContent (blocks) {
-        this.editorjs
-          .render({ blocks: clone(blocks) })
-          .then(() => {
-            this.editorjs.caret.focus()
-            this.editorjs.caret.setToLastBlock(CARET_POSITION_END)
-          })
+        if (this.blocks.length) {
+          this.editorjs
+            .render({ blocks: clone(blocks) })
+            .then(() => {
+              this.editorjs.caret.focus()
+              this.editorjs.caret.setToLastBlock(CARET_POSITION_END)
+            })
+        } else {
+          this.editorjs.clear()
+        }
       },
 
       grabContent () {
