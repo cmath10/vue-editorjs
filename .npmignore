@@ -1,0 +1,8 @@
+/.idea/
+/docker/
+/sandbox/
+
+/console.sh
+/docker-compose.yml
+/docker-env.sh
+/Makefile

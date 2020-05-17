@@ -1,0 +1,15 @@
+version: "3.2"
+services:
+  node:
+    image: vue-editorjs-node
+    environment:
+      PORT_KARMA: ${port_karma}
+      PORT_WEBPACK: ${port_webpack}
+    ports:
+      - "${port_karma}:9876"
+      - "${port_webpack}:8080"
+    container_name: vue-editorjs-env
+    volumes:
+      - type: bind
+        source: .
+        target: /var/www/vue-editorjs
